@@ -1,0 +1,70 @@
+[
+  {
+    "id": "gitops-pipeline",
+    "title": "Cloud-Native GitOps CI/CD Pipeline",
+    "category": "devops",
+    "shortDescription": "Automated zero-downtime Canary deployments on Kubernetes using ArgoCD, Helm, and AWS EKS.",
+    "longDescription": "A robust, production-grade cloud-native GitOps deployment pipeline designed to automate application lifecycle management. It monitors application repositories, runs automated testing suites, builds containerized microservices, and synchronizes state seamlessly using declarative GitOps models.",
+    "techStack": ["Kubernetes", "ArgoCD", "Helm", "AWS EKS", "Terraform", "GitLab CI", "Prometheus"],
+    "architecture": "Developer Push -> GitLab CI Builds & Tests -> Semantic Release -> Git Config Update -> ArgoCD Syncs State -> AWS EKS Cluster (Canary Rollouts with Argo Rollouts & Prometheus Metrics Hook)",
+    "duration": "4 Weeks",
+    "highlights": [
+      "Achieved 99.99% deployment uptime via automated Canary rollouts and dynamic rollbacks.",
+      "Provisioned infrastructure-as-code (IaC) modular components securely with Terraform.",
+      "Optimized Docker build times by 40% using multi-stage builds and layer caching."
+    ],
+    "githubLink": "https://github.com/example/gitops-kubernetes-cicd",
+    "liveLink": "https://github.com/example/gitops-kubernetes-cicd"
+  },
+  {
+    "id": "chaos-platform",
+    "title": "Automated Chaos Engineering Platform",
+    "category": "tooling",
+    "shortDescription": "Python-based resiliency testing suite injecting network latency and system faults into Kubernetes clusters.",
+    "longDescription": "An automated system reliability tool built to inject failure patterns (pod terminations, high CPU/Memory load, network degradation) into staging Kubernetes namespaces. Provides interactive resiliency scoring dashboards to prevent cascading runtime failures.",
+    "techStack": ["Python", "FastAPI", "Ansible", "Terraform", "Docker", "Grafana", "Chaos Mesh"],
+    "architecture": "FastAPI Web Controller -> Ansible Playbooks -> Chaos Mesh Custom Resources -> Staging Namespaces -> Real-time Telemetry Scrape -> Resilience Score Report Generator",
+    "duration": "6 Weeks",
+    "highlights": [
+      "Identified and mitigated 5 major database connection pool vulnerabilities before production releases.",
+      "Integrated dynamic Grafana panels showcasing system recovery times during active stress tests.",
+      "Designed full RESTful control API using FastAPI with JWT protection and role-based permissions."
+    ],
+    "githubLink": "https://github.com/example/chaos-resilience-suite",
+    "liveLink": "https://github.com/example/chaos-resilience-suite"
+  },
+  {
+    "id": "microservices-gateway",
+    "title": "Distributed Payment & Analytics Gateway",
+    "category": "fullstack",
+    "shortDescription": "High-throughput microservices architecture with real-time telemetry, gRPC communication, and React frontend.",
+    "longDescription": "A highly performant distributed banking/payment gateway processing concurrent transactions securely. Connects a modern React dashboard to an ultra-fast Go/gRPC backend stack, supported by Redis cache pools and asynchronous task queues.",
+    "techStack": ["Go", "React", "gRPC", "Redis", "PostgreSQL", "Docker", "Nginx", "RabbitMQ"],
+    "architecture": "React Client -> Nginx Gateway -> Go Web API -> gRPC Internal Microservices -> RabbitMQ Event Bus -> PostgreSQL Transaction Ledger (with Redis read caches)",
+    "duration": "8 Weeks",
+    "highlights": [
+      "Slashed query latency by 65% by implementing smart Redis cache-aside strategies.",
+      "Handled 15,000+ concurrent requests per second with highly lightweight Go routines and gRPC channels.",
+      "Designed responsive visual charting using React & Chart.js showcasing transaction metrics."
+    ],
+    "githubLink": "https://github.com/example/distributed-grpc-gateway",
+    "liveLink": "https://github.com/example/distributed-grpc-gateway"
+  },
+  {
+    "id": "serverless-telemetry",
+    "title": "Serverless Multi-Cluster Telemetry Agent",
+    "category": "cloud",
+    "shortDescription": "Lightweight serverless IoT and Edge telemetry aggregator with AWS Lambda, DynamoDB, and live dashboard.",
+    "longDescription": "A hyper-scalable, cost-efficient serverless backend and visual dashboard tracking resource telemetry from remote servers. Deployed fully serverless, processing thousands of device telemetry logs per minute with zero server maintenance.",
+    "techStack": ["Node.js", "AWS Lambda", "DynamoDB", "API Gateway", "AWS S3", "ChartJS", "Serverless Framework"],
+    "architecture": "Remote Telemetry Agents -> AWS API Gateway -> AWS Lambda Workers -> DynamoDB Timeseries Storage -> React SPA (loaded from CloudFront CDN & S3)",
+    "duration": "3 Weeks",
+    "highlights": [
+      "Operated at $0 base hosting cost due to AWS Serverless Free Tier optimization.",
+      "Established efficient DynamoDB partition key structures to enable fast real-time timeseries lookups.",
+      "Built clean CSS-based dashboards with smooth transitions, custom alert filters, and SMS alerts."
+    ],
+    "githubLink": "https://github.com/example/serverless-telemetry-system",
+    "liveLink": "https://github.com/example/serverless-telemetry-system"
+  }
+]

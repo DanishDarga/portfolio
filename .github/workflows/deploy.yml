@@ -1,0 +1,68 @@
+# ==========================================================================
+# GITHUB ACTIONS CI/CD PIPELINE CONFIGURATION
+# Purpose: Validate HTML assets and deploy static portfolio to GitHub Pages.
+# Trigger: Runs on every push to 'main' or 'master' branches.
+# ==========================================================================
+
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch: # Enables manual triggering of the pipeline from the GitHub Actions dashboard
+
+# Permissions required to publish web contents directly to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevent duplicate concurrent deployment runs to avoid race conditions
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # ------------------------------------------------------------------------
+  # JOB 1: Continuous Integration (CI) - Verification & Linting
+  # ------------------------------------------------------------------------
+  verify:
+    name: Verify & Validate Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: HTML Syntax Validator
+        name: Validate HTML Structure
+        uses: AnishNair/html-validator-action@v2
+        with:
+          files: index.html
+
+  # ------------------------------------------------------------------------
+  # JOB 2: Continuous Deployment (CD) - Deploy to GitHub Pages
+  # ------------------------------------------------------------------------
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: verify # Only execute deployment if linting and code verification succeeded
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }} # Emits the final live website link in GitHub summary
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages Config
+        uses: actions/configure-pages@v4
+
+      - name: Compile & Upload Web Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Uploads entire workspace contents (index.html, styles.css, script.js, projects.json)
+
+      - name: Publish Live to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
