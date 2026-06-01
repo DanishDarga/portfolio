@@ -35,8 +35,7 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: HTML Syntax Validator
-        name: Validate HTML Structure
+      - name: Validate HTML Structure
         uses: AnishNair/html-validator-action@v2
         with:
           files: index.html
