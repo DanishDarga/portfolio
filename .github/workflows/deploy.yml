@@ -35,10 +35,13 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Validate HTML Structure
-        uses: AnishNair/html-validator-action@v2
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
         with:
-          files: index.html
+          node-version: '20'
+
+      - name: Validate HTML Structure (HTMLHint)
+        run: npx htmlhint index.html
 
   # ------------------------------------------------------------------------
   # JOB 2: Continuous Deployment (CD) - Deploy to GitHub Pages
