@@ -97,9 +97,9 @@ jobs:
             sudo docker stop portfolio-web || true
             sudo docker rm portfolio-web || true
 
-            # 5. Run the new container exposing port 80 mapping to container port 80
+            # 5. Run the new container exposing port 8080 locally mapping to container port 80
             echo "Starting new portfolio container..."
-            sudo docker run -d --name portfolio-web -p 80:80 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+            sudo docker run -d --name portfolio-web -p 127.0.0.1:8080:80 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
 
             # 6. Verify container status
             sudo docker ps | grep portfolio-web
