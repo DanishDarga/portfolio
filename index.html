@@ -1,678 +1,694 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="cyberpunk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevOps & Full-Stack Engineer Portfolio | Premium Showcase</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevOps & Full-Stack Engineer Portfolio | Premium Showcase</title>
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Welcome to the premium interactive portfolio of a Cloud DevOps & Full-Stack Engineer. Explore automated CI/CD configurations, scale web architectures, and experience the custom terminal interface."
+    />
+    <meta
+      name="keywords"
+      content="DevOps, Full-Stack, CI/CD, Kubernetes, Docker, React, AWS, Cloud Engineer, Systems Architect"
+    />
+    <meta name="author" content="DevOps Architect" />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description"
-    content="Welcome to the premium interactive portfolio of a Cloud DevOps & Full-Stack Engineer. Explore automated CI/CD configurations, scale web architectures, and experience the custom terminal interface.">
-  <meta name="keywords"
-    content="DevOps, Full-Stack, CI/CD, Kubernetes, Docker, React, AWS, Cloud Engineer, Systems Architect">
-  <meta name="author" content="DevOps Architect">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
-    rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-</head>
+  <body>
+    <!-- Background Decorative Glowing Effects -->
+    <div class="glow-bg-container">
+      <div class="glow-circle circle-1"></div>
+      <div class="glow-circle circle-2"></div>
+      <div class="glow-circle circle-3"></div>
+    </div>
 
-<body>
+    <!-- Navbar Section -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo" id="nav-logo">
+          <span class="logo-accent">&lt;</span>SYSTEM_DEVOPS <span class="logo-blink">/&gt;</span>
+        </a>
 
-  <!-- Background Decorative Glowing Effects -->
-  <div class="glow-bg-container">
-    <div class="glow-circle circle-1"></div>
-    <div class="glow-circle circle-2"></div>
-    <div class="glow-circle circle-3"></div>
-  </div>
+        <nav class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link active" id="link-home">Home</a>
+          <a href="#terminal" class="nav-link" id="link-terminal">Terminal</a>
+          <a href="#skills" class="nav-link" id="link-skills">Skills</a>
+          <a href="#projects" class="nav-link" id="link-projects">Projects</a>
+          <a href="#experience" class="nav-link" id="link-experience">Experience</a>
+          <a href="#contact" class="nav-link" id="link-contact">Contact</a>
+        </nav>
 
-  <!-- Navbar Section -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo" id="nav-logo">
-        <span class="logo-accent">&lt;</span>SYSTEM_DEVOPS <span class="logo-blink">/&gt;</span>
-      </a>
+        <div class="nav-actions">
+          <!-- Theme Customizer Trigger -->
+          <div class="theme-dropdown">
+            <button class="theme-btn" id="theme-btn" aria-label="Change Color Theme">
+              <i data-lucide="palette"></i>
+              <span>Theme</span>
+              <i data-lucide="chevron-down" class="chevron"></i>
+            </button>
+            <div class="theme-menu" id="theme-menu">
+              <button class="theme-opt" data-select-theme="cyberpunk" id="theme-opt-cyber">
+                <span class="color-dot dot-cyber"></span> Cyberpunk Dark
+              </button>
+              <button class="theme-opt" data-select-theme="nebula" id="theme-opt-nebula">
+                <span class="color-dot dot-nebula"></span> Deep Nebula
+              </button>
+              <button class="theme-opt" data-select-theme="glass-light" id="theme-opt-light">
+                <span class="color-dot dot-light"></span> Glass Light
+              </button>
+            </div>
+          </div>
 
-      <nav class="nav-menu" id="nav-menu">
-        <a href="#home" class="nav-link active" id="link-home">Home</a>
-        <a href="#terminal" class="nav-link" id="link-terminal">Terminal</a>
-        <a href="#skills" class="nav-link" id="link-skills">Skills</a>
-        <a href="#projects" class="nav-link" id="link-projects">Projects</a>
-        <a href="#experience" class="nav-link" id="link-experience">Experience</a>
-        <a href="#contact" class="nav-link" id="link-contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <!-- Theme Customizer Trigger -->
-        <div class="theme-dropdown">
-          <button class="theme-btn" id="theme-btn" aria-label="Change Color Theme">
-            <i data-lucide="palette"></i>
-            <span>Theme</span>
-            <i data-lucide="chevron-down" class="chevron"></i>
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Mobile Menu">
+            <i data-lucide="menu"></i>
           </button>
-          <div class="theme-menu" id="theme-menu">
-            <button class="theme-opt" data-select-theme="cyberpunk" id="theme-opt-cyber">
-              <span class="color-dot dot-cyber"></span> Cyberpunk Dark
-            </button>
-            <button class="theme-opt" data-select-theme="nebula" id="theme-opt-nebula">
-              <span class="color-dot dot-nebula"></span> Deep Nebula
-            </button>
-            <button class="theme-opt" data-select-theme="glass-light" id="theme-opt-light">
-              <span class="color-dot dot-light"></span> Glass Light
-            </button>
-          </div>
         </div>
-
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Mobile Menu">
-          <i data-lucide="menu"></i>
-        </button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main Content Layout -->
-  <main>
+    <!-- Main Content Layout -->
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero-section">
+        <div class="section-container hero-grid">
+          <div class="hero-text-content">
+            <div class="badge-glow" id="hero-badge">
+              <span class="badge-pulse"></span>
+              <span>AVAILABLE FOR CONTRACTS & FULL-TIME</span>
+            </div>
+            <h1 class="hero-title" id="hero-heading">
+              Hi, I build <span class="gradient-text">resilient</span> systems &
+              <span class="typewriter" id="typewriter"></span>
+            </h1>
+            <p class="hero-desc" id="hero-paragraph">
+              Bridge the gap between development and robust operations. I architect scalable cloud infrastructure,
+              automate deployment configurations, and code high-performance web applications.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#terminal" class="btn btn-primary" id="btn-hero-terminal">
+                <i data-lucide="terminal"></i> Launch Terminal
+              </a>
+              <a href="#projects" class="btn btn-secondary" id="btn-hero-projects">
+                <i data-lucide="layout-grid"></i> View Projects
+              </a>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <div class="metric-num" id="metric-experience">5+</div>
+                <div class="metric-label">Years of Experience</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-num" id="metric-uptime">99.99%</div>
+                <div class="metric-label">Target Infrastructure Uptime</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-num" id="metric-commits">2.4k+</div>
+                <div class="metric-label">Production Commits</div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="section-container hero-grid">
-        <div class="hero-text-content">
-          <div class="badge-glow" id="hero-badge">
-            <span class="badge-pulse"></span>
-            <span>AVAILABLE FOR CONTRACTS & FULL-TIME</span>
-          </div>
-          <h1 class="hero-title" id="hero-heading">
-            Hi, I build <span class="gradient-text">resilient</span> systems & <span class="typewriter"
-              id="typewriter"></span>
-          </h1>
-          <p class="hero-desc" id="hero-paragraph">
-            Bridge the gap between development and robust operations. I architect scalable cloud infrastructure,
-            automate deployment configurations, and code high-performance web applications.
-          </p>
-          <div class="hero-cta-group">
-            <a href="#terminal" class="btn btn-primary" id="btn-hero-terminal">
-              <i data-lucide="terminal"></i> Launch Terminal
-            </a>
-            <a href="#projects" class="btn btn-secondary" id="btn-hero-projects">
-              <i data-lucide="layout-grid"></i> View Projects
-            </a>
-          </div>
-          <div class="hero-metrics">
-            <div class="metric-item">
-              <div class="metric-num" id="metric-experience">5+</div>
-              <div class="metric-label">Years of Experience</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-num" id="metric-uptime">99.99%</div>
-              <div class="metric-label">Target Infrastructure Uptime</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-num" id="metric-commits">2.4k+</div>
-              <div class="metric-label">Production Commits</div>
+          <!-- Hero Visualization Panel -->
+          <div class="hero-visual-panel">
+            <div class="visual-card-glow">
+              <div class="visual-header">
+                <div class="window-dot red"></div>
+                <div class="window-dot yellow"></div>
+                <div class="window-dot green"></div>
+                <span class="visual-title">infrastructure.tf</span>
+              </div>
+              <div class="visual-body font-mono">
+                <span class="line-num">1</span><span class="code-keyword">resource</span>
+                <span class="code-string">"aws_eks_cluster"</span>
+                <span class="code-variable">"production"</span> {<br />
+                <span class="line-num">2</span> &nbsp;&nbsp;name = <span class="code-string">"prod-core-cluster"</span
+                ><br />
+                <span class="line-num">3</span> &nbsp;&nbsp;role_arn = aws_iam_role.cluster.arn<br />
+                <span class="line-num">4</span> &nbsp;&nbsp;version = <span class="code-string">"1.29"</span><br />
+                <span class="line-num">5</span><br />
+                <span class="line-num">6</span> &nbsp;&nbsp;vpc_config {<br />
+                <span class="line-num">7</span> &nbsp;&nbsp;&nbsp;&nbsp;subnet_ids = [aws_subnet.private_a.id,
+                aws_subnet.private_b.id]<br />
+                <span class="line-num">8</span> &nbsp;&nbsp;&nbsp;&nbsp;endpoint_private_access =
+                <span class="code-boolean">true</span><br />
+                <span class="line-num">9</span> &nbsp;&nbsp;&nbsp;&nbsp;endpoint_public_access =
+                <span class="code-boolean">false</span><br />
+                <span class="line-num">10</span> &nbsp;&nbsp;}<br />
+                <span class="line-num">11</span>}
+              </div>
+              <div class="pipeline-flow-visual">
+                <div class="flow-step pulse" title="Code Commit">
+                  <i data-lucide="git-branch"></i>
+                  <span>GIT</span>
+                </div>
+                <div class="flow-line"></div>
+                <div class="flow-step pulse-delay-1" title="CI/CD Build & Test">
+                  <i data-lucide="cpu"></i>
+                  <span>BUILD</span>
+                </div>
+                <div class="flow-line"></div>
+                <div class="flow-step pulse-delay-2" title="GitOps Synchronize">
+                  <i data-lucide="refresh-cw"></i>
+                  <span>GITOPS</span>
+                </div>
+                <div class="flow-line"></div>
+                <div class="flow-step pulse-delay-3" title="Cloud Host">
+                  <i data-lucide="cloud"></i>
+                  <span>DEPLOY</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Hero Visualization Panel -->
-        <div class="hero-visual-panel">
-          <div class="visual-card-glow">
-            <div class="visual-header">
-              <div class="window-dot red"></div>
-              <div class="window-dot yellow"></div>
-              <div class="window-dot green"></div>
-              <span class="visual-title">infrastructure.tf</span>
+      <!-- Interactive Terminal Section -->
+      <section id="terminal" class="terminal-section">
+        <div class="section-container">
+          <div class="section-header align-center">
+            <span class="section-tag" id="terminal-tag">INTERACTIVE SANDBOX</span>
+            <h2 class="section-title" id="terminal-heading">DevOps Command Terminal</h2>
+            <p class="section-desc" id="terminal-desc">
+              An authentic SSH shell environment. Type commands to learn more about my background, skills, and
+              operations stack. Try typing <span class="code-inline">help</span> to begin.
+            </p>
+          </div>
+
+          <div class="terminal-container" id="main-terminal">
+            <div class="terminal-bar">
+              <div class="terminal-controls">
+                <div class="window-dot red" title="Close Session"></div>
+                <div class="window-dot yellow" title="Minimize Session"></div>
+                <div class="window-dot green" title="Maximize Session"></div>
+              </div>
+              <div class="terminal-title">guest@devops-ops-shell:~</div>
+              <div class="terminal-status">
+                <span class="status-indicator-dot blinking"></span>
+                <span class="status-text font-mono">SSH CONNECTED</span>
+              </div>
             </div>
-            <div class="visual-body font-mono">
-              <span class="line-num">1</span><span class="code-keyword">resource</span> <span
-                class="code-string">"aws_eks_cluster"</span> <span class="code-variable">"production"</span> {<br>
-              <span class="line-num">2</span> &nbsp;&nbsp;name = <span
-                class="code-string">"prod-core-cluster"</span><br>
-              <span class="line-num">3</span> &nbsp;&nbsp;role_arn = aws_iam_role.cluster.arn<br>
-              <span class="line-num">4</span> &nbsp;&nbsp;version = <span class="code-string">"1.29"</span><br>
-              <span class="line-num">5</span><br>
-              <span class="line-num">6</span> &nbsp;&nbsp;vpc_config {<br>
-              <span class="line-num">7</span> &nbsp;&nbsp;&nbsp;&nbsp;subnet_ids = [aws_subnet.private_a.id,
-              aws_subnet.private_b.id]<br>
-              <span class="line-num">8</span> &nbsp;&nbsp;&nbsp;&nbsp;endpoint_private_access = <span
-                class="code-boolean">true</span><br>
-              <span class="line-num">9</span> &nbsp;&nbsp;&nbsp;&nbsp;endpoint_public_access = <span
-                class="code-boolean">false</span><br>
-              <span class="line-num">10</span> &nbsp;&nbsp;}<br>
-              <span class="line-num">11</span>}
+
+            <div class="terminal-body font-mono" id="terminal-output">
+              <div class="term-line welcome-msg">===============================================================</div>
+              <div class="term-line welcome-msg text-accent">WELCOME TO THE SYSTEM SHELL (v2.4.1-STABLE)</div>
+              <div class="term-line welcome-msg">
+                Log Time: <span id="current-session-time">2026-06-01 13:08:00</span>
+              </div>
+              <div class="term-line welcome-msg">Connected Host: guest-client.local.network</div>
+              <div class="term-line welcome-msg">
+                Type <span class="term-highlight">help</span> to list all available system operations.
+              </div>
+              <div class="term-line welcome-msg">===============================================================</div>
+              <br />
             </div>
-            <div class="pipeline-flow-visual">
-              <div class="flow-step pulse" title="Code Commit">
-                <i data-lucide="git-branch"></i>
-                <span>GIT</span>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step pulse-delay-1" title="CI/CD Build & Test">
-                <i data-lucide="cpu"></i>
-                <span>BUILD</span>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step pulse-delay-2" title="GitOps Synchronize">
-                <i data-lucide="refresh-cw"></i>
-                <span>GITOPS</span>
-              </div>
-              <div class="flow-line"></div>
-              <div class="flow-step pulse-delay-3" title="Cloud Host">
+
+            <div class="terminal-input-row font-mono">
+              <span class="terminal-prompt">guest@devops-ops-shell:~$</span>
+              <input
+                type="text"
+                class="terminal-input"
+                id="terminal-input"
+                autocomplete="off"
+                autofocus
+                spellcheck="false"
+                placeholder="Type a command..."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Dashboard Section -->
+      <section id="skills" class="skills-section">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag" id="skills-tag">CAPABILITIES</span>
+            <h2 class="section-title" id="skills-heading">Technical Ecosystem</h2>
+            <p class="section-desc" id="skills-desc">
+              A comprehensive overview of my core competencies, categorized by engineering domains and proficiency
+              levels. Hover over each tool to inspect operational details.
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Category 1 -->
+            <div class="skill-category-card">
+              <div class="category-header">
                 <i data-lucide="cloud"></i>
-                <span>DEPLOY</span>
+                <h3>Cloud & Infrastructure</h3>
+              </div>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Amazon Web Services (AWS)</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Terraform (IaC)</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Google Cloud (GCP)</span>
+                    <span class="skill-percent">80%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 80%"></div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Interactive Terminal Section -->
-    <section id="terminal" class="terminal-section">
-      <div class="section-container">
-        <div class="section-header align-center">
-          <span class="section-tag" id="terminal-tag">INTERACTIVE SANDBOX</span>
-          <h2 class="section-title" id="terminal-heading">DevOps Command Terminal</h2>
-          <p class="section-desc" id="terminal-desc">
-            An authentic SSH shell environment. Type commands to learn more about my background, skills, and operations
-            stack. Try typing <span class="code-inline">help</span> to begin.
-          </p>
-        </div>
+            <!-- Category 2 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <i data-lucide="box"></i>
+                <h3>Containers & Orchestration</h3>
+              </div>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Kubernetes (K8s)</span>
+                    <span class="skill-percent">92%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Docker / Containerd</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">ArgoCD & GitOps</span>
+                    <span class="skill-percent">88%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="terminal-container" id="main-terminal">
-          <div class="terminal-bar">
-            <div class="terminal-controls">
-              <div class="window-dot red" title="Close Session"></div>
-              <div class="window-dot yellow" title="Minimize Session"></div>
-              <div class="window-dot green" title="Maximize Session"></div>
+            <!-- Category 3 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <i data-lucide="terminal"></i>
+                <h3>Backend & Scripting</h3>
+              </div>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Python (FastAPI, Django)</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Go (Golang)</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Bash & Shell Scripting</span>
+                    <span class="skill-percent">95%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 95%"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="terminal-title">guest@devops-ops-shell:~</div>
-            <div class="terminal-status">
-              <span class="status-indicator-dot blinking"></span>
-              <span class="status-text font-mono">SSH CONNECTED</span>
-            </div>
-          </div>
 
-          <div class="terminal-body font-mono" id="terminal-output">
-            <div class="term-line welcome-msg">===============================================================</div>
-            <div class="term-line welcome-msg text-accent">WELCOME TO THE SYSTEM SHELL (v2.4.1-STABLE)</div>
-            <div class="term-line welcome-msg">Log Time: <span id="current-session-time">2026-06-01 13:08:00</span>
-            </div>
-            <div class="term-line welcome-msg">Connected Host: guest-client.local.network</div>
-            <div class="term-line welcome-msg">Type <span class="term-highlight">help</span> to list all available
-              system operations.</div>
-            <div class="term-line welcome-msg">===============================================================</div>
-            <br>
-          </div>
-
-          <div class="terminal-input-row font-mono">
-            <span class="terminal-prompt">guest@devops-ops-shell:~$</span>
-            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" autofocus
-              spellcheck="false" placeholder="Type a command...">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Dashboard Section -->
-    <section id="skills" class="skills-section">
-      <div class="section-container">
-        <div class="section-header">
-          <span class="section-tag" id="skills-tag">CAPABILITIES</span>
-          <h2 class="section-title" id="skills-heading">Technical Ecosystem</h2>
-          <p class="section-desc" id="skills-desc">
-            A comprehensive overview of my core competencies, categorized by engineering domains and proficiency levels.
-            Hover over each tool to inspect operational details.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Category 1 -->
-          <div class="skill-category-card">
-            <div class="category-header">
-              <i data-lucide="cloud"></i>
-              <h3>Cloud & Infrastructure</h3>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Amazon Web Services (AWS)</span>
-                  <span class="skill-percent">95%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 95%"></div>
-                </div>
+            <!-- Category 4 -->
+            <div class="skill-category-card">
+              <div class="category-header">
+                <i data-lucide="layout"></i>
+                <h3>Frontend & Monitoring</h3>
               </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Terraform (IaC)</span>
-                  <span class="skill-percent">90%</span>
+              <div class="skill-list">
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">HTML5, CSS3, Javascript (ES6)</span>
+                    <span class="skill-percent">90%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 90%"></div>
+                  </div>
                 </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 90%"></div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">React & Next.js</span>
+                    <span class="skill-percent">85%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 85%"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Google Cloud (GCP)</span>
-                  <span class="skill-percent">80%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 80%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 2 -->
-          <div class="skill-category-card">
-            <div class="category-header">
-              <i data-lucide="box"></i>
-              <h3>Containers & Orchestration</h3>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Kubernetes (K8s)</span>
-                  <span class="skill-percent">92%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 92%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Docker / Containerd</span>
-                  <span class="skill-percent">95%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 95%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">ArgoCD & GitOps</span>
-                  <span class="skill-percent">88%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 88%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 3 -->
-          <div class="skill-category-card">
-            <div class="category-header">
-              <i data-lucide="terminal"></i>
-              <h3>Backend & Scripting</h3>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Python (FastAPI, Django)</span>
-                  <span class="skill-percent">90%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Go (Golang)</span>
-                  <span class="skill-percent">85%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Bash & Shell Scripting</span>
-                  <span class="skill-percent">95%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 95%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 4 -->
-          <div class="skill-category-card">
-            <div class="category-header">
-              <i data-lucide="layout"></i>
-              <h3>Frontend & Monitoring</h3>
-            </div>
-            <div class="skill-list">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">HTML5, CSS3, Javascript (ES6)</span>
-                  <span class="skill-percent">90%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">React & Next.js</span>
-                  <span class="skill-percent">85%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Prometheus, Grafana, ELK</span>
-                  <span class="skill-percent">88%</span>
-                </div>
-                <div class="skill-bar-outer">
-                  <div class="skill-bar-inner" style="width: 88%"></div>
+                <div class="skill-item">
+                  <div class="skill-info">
+                    <span class="skill-name">Prometheus, Grafana, ELK</span>
+                    <span class="skill-percent">88%</span>
+                  </div>
+                  <div class="skill-bar-outer">
+                    <div class="skill-bar-inner" style="width: 88%"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Projects Portfolio Section -->
-    <section id="projects" class="projects-section">
-      <div class="section-container">
-        <div class="section-header align-center">
-          <span class="section-tag" id="projects-tag">CREATIVE LAB</span>
-          <h2 class="section-title" id="projects-heading">Operational Engineering Works</h2>
-          <p class="section-desc" id="projects-desc">
-            A selective collection of systems architectures, cloud automations, and full-stack solutions. Explore their
-            system flow diagrams in detail.
-          </p>
+      <!-- Projects Portfolio Section -->
+      <section id="projects" class="projects-section">
+        <div class="section-container">
+          <div class="section-header align-center">
+            <span class="section-tag" id="projects-tag">CREATIVE LAB</span>
+            <h2 class="section-title" id="projects-heading">Operational Engineering Works</h2>
+            <p class="section-desc" id="projects-desc">
+              A selective collection of systems architectures, cloud automations, and full-stack solutions. Explore
+              their system flow diagrams in detail.
+            </p>
 
-          <!-- Dynamic Filter Tabs -->
-          <div class="project-filters" id="project-filters">
-            <button class="filter-tab active" data-filter="all" id="filter-all">All Works</button>
-            <button class="filter-tab" data-filter="devops" id="filter-devops">DevOps & GitOps</button>
-            <button class="filter-tab" data-filter="fullstack" id="filter-fullstack">Full-Stack Apps</button>
-            <button class="filter-tab" data-filter="tooling" id="filter-tooling">Tools & Automation</button>
-          </div>
-        </div>
-
-        <!-- Target Grid for Dynamic Injection -->
-        <div class="projects-grid" id="projects-grid">
-          <!-- Dynamically populated from JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section (Timeline) -->
-    <section id="experience" class="experience-section">
-      <div class="section-container">
-        <div class="section-header align-center">
-          <span class="section-tag" id="experience-tag">CAREER VECTOR</span>
-          <h2 class="section-title" id="experience-heading">Professional Experience</h2>
-          <p class="section-desc" id="experience-desc">
-            My evolutionary history of deploying scalable software architectures and managing reliable container
-            networks.
-          </p>
-        </div>
-
-        <div class="timeline">
-          <!-- Line Segment -->
-          <div class="timeline-line"></div>
-
-          <!-- Timeline Node 1 -->
-          <div class="timeline-item left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">June 2024 - Present</div>
-              <h3 class="timeline-role">Lead DevOps & Site Reliability Specialist</h3>
-              <h4 class="timeline-company">QuantumFlow Technologies</h4>
-              <p class="timeline-body-text">
-                Architected high-availability Kubernetes multi-region failover cluster setups. Migrated legacy VM
-                systems to fully automated Terraform-orchestrated environments. Designed localized service meshes with
-                Istio to isolate sensitive transaction pipelines.
-              </p>
-              <div class="timeline-badges">
-                <span class="badge">EKS</span>
-                <span class="badge">Istio</span>
-                <span class="badge">Terraform</span>
-                <span class="badge">Helm</span>
-              </div>
+            <!-- Dynamic Filter Tabs -->
+            <div class="project-filters" id="project-filters">
+              <button class="filter-tab active" data-filter="all" id="filter-all">All Works</button>
+              <button class="filter-tab" data-filter="devops" id="filter-devops">DevOps & GitOps</button>
+              <button class="filter-tab" data-filter="fullstack" id="filter-fullstack">Full-Stack Apps</button>
+              <button class="filter-tab" data-filter="tooling" id="filter-tooling">Tools & Automation</button>
             </div>
           </div>
 
-          <!-- Timeline Node 2 -->
-          <div class="timeline-item right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">Jan 2022 - May 2024</div>
-              <h3 class="timeline-role">Senior Full-Stack & Cloud Platform Engineer</h3>
-              <h4 class="timeline-company">Helix Labs Inc.</h4>
-              <p class="timeline-body-text">
-                Engineered the core microservice architecture in Go and React, slashing API latency by 45%. Established
-                GitOps continuous deployment workflows across four dev/prod divisions. Handled elastic capacity
-                orchestration on GCP Cloud Run.
-              </p>
-              <div class="timeline-badges">
-                <span class="badge">Go (Golang)</span>
-                <span class="badge">React</span>
-                <span class="badge">GCP</span>
-                <span class="badge">ArgoCD</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timeline Node 3 -->
-          <div class="timeline-item left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">Mar 2020 - Dec 2021</div>
-              <h3 class="timeline-role">DevOps Automator & Systems Engineer</h3>
-              <h4 class="timeline-company">Atlas Software Corp</h4>
-              <p class="timeline-body-text">
-                Automated end-to-end integration test suites utilizing Ansible playbooks. Supervised physical and cloud
-                system operations with Prometheus and customized Alertmanager rules. Programmed internal scripting tools
-                in Python to ease manual code review steps.
-              </p>
-              <div class="timeline-badges">
-                <span class="badge">Python</span>
-                <span class="badge">Ansible</span>
-                <span class="badge">Prometheus</span>
-                <span class="badge">Docker</span>
-              </div>
-            </div>
+          <!-- Target Grid for Dynamic Injection -->
+          <div class="projects-grid" id="projects-grid">
+            <!-- Dynamically populated from JS -->
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact & Feedback Section -->
-    <section id="contact" class="contact-section">
-      <div class="section-container contact-grid">
-        <div class="contact-info-panel">
-          <span class="section-tag" id="contact-tag">COMMUNICATION BRIDGE</span>
-          <h2 class="section-title" id="contact-heading">Deploy A Connection</h2>
-          <p class="section-desc" id="contact-desc">
-            Looking to consult on scalable architecture, request CI/CD custom configurations, or have a exciting
-            engineering contract? Fire away!
-          </p>
+      <!-- Experience Section (Timeline) -->
+      <section id="experience" class="experience-section">
+        <div class="section-container">
+          <div class="section-header align-center">
+            <span class="section-tag" id="experience-tag">CAREER VECTOR</span>
+            <h2 class="section-title" id="experience-heading">Professional Experience</h2>
+            <p class="section-desc" id="experience-desc">
+              My evolutionary history of deploying scalable software architectures and managing reliable container
+              networks.
+            </p>
+          </div>
 
-          <div class="contact-details">
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i data-lucide="mail"></i>
-              </div>
-              <div class="detail-texts">
-                <span class="detail-label">SECURE SMTP INBOUND</span>
-                <a href="mailto:admin@sysdevops.io" class="detail-val">admin@sysdevops.io</a>
+          <div class="timeline">
+            <!-- Line Segment -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline Node 1 -->
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">June 2024 - Present</div>
+                <h3 class="timeline-role">Lead DevOps & Site Reliability Specialist</h3>
+                <h4 class="timeline-company">QuantumFlow Technologies</h4>
+                <p class="timeline-body-text">
+                  Architected high-availability Kubernetes multi-region failover cluster setups. Migrated legacy VM
+                  systems to fully automated Terraform-orchestrated environments. Designed localized service meshes with
+                  Istio to isolate sensitive transaction pipelines.
+                </p>
+                <div class="timeline-badges">
+                  <span class="badge">EKS</span>
+                  <span class="badge">Istio</span>
+                  <span class="badge">Terraform</span>
+                  <span class="badge">Helm</span>
+                </div>
               </div>
             </div>
 
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i data-lucide="map-pin"></i>
-              </div>
-              <div class="detail-texts">
-                <span class="detail-label">OPERATING GEOLOCATION</span>
-                <span class="detail-val">San Francisco, CA (Remote Friendly)</span>
+            <!-- Timeline Node 2 -->
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Jan 2022 - May 2024</div>
+                <h3 class="timeline-role">Senior Full-Stack & Cloud Platform Engineer</h3>
+                <h4 class="timeline-company">Helix Labs Inc.</h4>
+                <p class="timeline-body-text">
+                  Engineered the core microservice architecture in Go and React, slashing API latency by 45%.
+                  Established GitOps continuous deployment workflows across four dev/prod divisions. Handled elastic
+                  capacity orchestration on GCP Cloud Run.
+                </p>
+                <div class="timeline-badges">
+                  <span class="badge">Go (Golang)</span>
+                  <span class="badge">React</span>
+                  <span class="badge">GCP</span>
+                  <span class="badge">ArgoCD</span>
+                </div>
               </div>
             </div>
 
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i data-lucide="globe"></i>
-              </div>
-              <div class="detail-texts">
-                <span class="detail-label">PUBLIC ENCRYPTION KEY</span>
-                <span class="detail-val font-mono truncate-key" title="SSH Key Code Reference">ssh-rsa
-                  AAAAB3NzaC1yc...</span>
+            <!-- Timeline Node 3 -->
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Mar 2020 - Dec 2021</div>
+                <h3 class="timeline-role">DevOps Automator & Systems Engineer</h3>
+                <h4 class="timeline-company">Atlas Software Corp</h4>
+                <p class="timeline-body-text">
+                  Automated end-to-end integration test suites utilizing Ansible playbooks. Supervised physical and
+                  cloud system operations with Prometheus and customized Alertmanager rules. Programmed internal
+                  scripting tools in Python to ease manual code review steps.
+                </p>
+                <div class="timeline-badges">
+                  <span class="badge">Python</span>
+                  <span class="badge">Ansible</span>
+                  <span class="badge">Prometheus</span>
+                  <span class="badge">Docker</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Elegant Form Panel -->
-        <div class="contact-form-panel">
-          <form class="contact-form" id="contact-form" action="#" method="POST" novalidate>
-            <div class="form-row-half">
+      <!-- Contact & Feedback Section -->
+      <section id="contact" class="contact-section">
+        <div class="section-container contact-grid">
+          <div class="contact-info-panel">
+            <span class="section-tag" id="contact-tag">COMMUNICATION BRIDGE</span>
+            <h2 class="section-title" id="contact-heading">Deploy A Connection</h2>
+            <p class="section-desc" id="contact-desc">
+              Looking to consult on scalable architecture, request CI/CD custom configurations, or have a exciting
+              engineering contract? Fire away!
+            </p>
+
+            <div class="contact-details">
+              <div class="detail-card">
+                <div class="detail-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div class="detail-texts">
+                  <span class="detail-label">SECURE SMTP INBOUND</span>
+                  <a href="mailto:admin@sysdevops.io" class="detail-val">admin@sysdevops.io</a>
+                </div>
+              </div>
+
+              <div class="detail-card">
+                <div class="detail-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="detail-texts">
+                  <span class="detail-label">OPERATING GEOLOCATION</span>
+                  <span class="detail-val">San Francisco, CA (Remote Friendly)</span>
+                </div>
+              </div>
+
+              <div class="detail-card">
+                <div class="detail-icon">
+                  <i data-lucide="globe"></i>
+                </div>
+                <div class="detail-texts">
+                  <span class="detail-label">PUBLIC ENCRYPTION KEY</span>
+                  <span class="detail-val font-mono truncate-key" title="SSH Key Code Reference"
+                    >ssh-rsa AAAAB3NzaC1yc...</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elegant Form Panel -->
+          <div class="contact-form-panel">
+            <form class="contact-form" id="contact-form" action="#" method="POST" novalidate>
+              <div class="form-row-half">
+                <div class="input-wrapper">
+                  <input type="text" id="contact-name" name="name" required placeholder=" " />
+                  <label for="contact-name">SYSTEM USERNAME / NAME</label>
+                  <i class="input-icon" data-lucide="user"></i>
+                  <span class="error-msg" id="error-name">Username must not be empty</span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="contact-email" name="email" required placeholder=" " />
+                  <label for="contact-email">SMTP ADDRESS / EMAIL</label>
+                  <i class="input-icon" data-lucide="at-sign"></i>
+                  <span class="error-msg" id="error-email">Provide a valid SMTP address</span>
+                </div>
+              </div>
+
               <div class="input-wrapper">
-                <input type="text" id="contact-name" name="name" required placeholder=" ">
-                <label for="contact-name">SYSTEM USERNAME / NAME</label>
-                <i class="input-icon" data-lucide="user"></i>
-                <span class="error-msg" id="error-name">Username must not be empty</span>
+                <input type="text" id="contact-subject" name="subject" required placeholder=" " />
+                <label for="contact-subject">OPERATION TOPIC / SUBJECT</label>
+                <i class="input-icon" data-lucide="terminal"></i>
+                <span class="error-msg" id="error-subject">Specify a subject topic</span>
               </div>
+
               <div class="input-wrapper">
-                <input type="email" id="contact-email" name="email" required placeholder=" ">
-                <label for="contact-email">SMTP ADDRESS / EMAIL</label>
-                <i class="input-icon" data-lucide="at-sign"></i>
-                <span class="error-msg" id="error-email">Provide a valid SMTP address</span>
+                <textarea id="contact-message" name="message" rows="5" required placeholder=" "></textarea>
+                <label for="contact-message">OPERATION REQUEST / BODY MESSAGE</label>
+                <i class="input-icon textarea-icon" data-lucide="message-square"></i>
+                <span class="error-msg" id="error-message">Message must contain at least 15 characters</span>
               </div>
-            </div>
 
-            <div class="input-wrapper">
-              <input type="text" id="contact-subject" name="subject" required placeholder=" ">
-              <label for="contact-subject">OPERATION TOPIC / SUBJECT</label>
-              <i class="input-icon" data-lucide="terminal"></i>
-              <span class="error-msg" id="error-subject">Specify a subject topic</span>
-            </div>
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <i data-lucide="send"></i>
+                <span>TRANSMIT PACKAGE</span>
+              </button>
+            </form>
 
-            <div class="input-wrapper">
-              <textarea id="contact-message" name="message" rows="5" required placeholder=" "></textarea>
-              <label for="contact-message">OPERATION REQUEST / BODY MESSAGE</label>
-              <i class="input-icon textarea-icon" data-lucide="message-square"></i>
-              <span class="error-msg" id="error-message">Message must contain at least 15 characters</span>
+            <!-- Form Action Feedback (Popup or Inline Card) -->
+            <div class="form-feedback hidden" id="form-feedback">
+              <div class="feedback-icon pulse">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3 class="feedback-title">Transmission Successful!</h3>
+              <p class="feedback-body">
+                Your message has been packed, verified, and sent to my inbox queue. I will reply within 24 hours.
+              </p>
+              <button class="btn btn-secondary btn-sm" id="feedback-reset-btn">Send Another Message</button>
             </div>
-
-            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
-              <i data-lucide="send"></i>
-              <span>TRANSMIT PACKAGE</span>
-            </button>
-          </form>
-
-          <!-- Form Action Feedback (Popup or Inline Card) -->
-          <div class="form-feedback hidden" id="form-feedback">
-            <div class="feedback-icon pulse">
-              <i data-lucide="check-circle-2"></i>
-            </div>
-            <h3 class="feedback-title">Transmission Successful!</h3>
-            <p class="feedback-body">Your message has been packed, verified, and sent to my inbox queue. I will reply
-              within 24 hours.</p>
-            <button class="btn btn-secondary btn-sm" id="feedback-reset-btn">Send Another Message</button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-  </main>
-
-  <!-- Global Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-brand font-mono">
-        &copy; 2026 SYSTEM_DEVOPS. ALL PERMISSIONS GRANTED.
-      </div>
-      <div class="footer-server-status font-mono">
-        <span class="status-indicator-dot blinking green-glow"></span>
-        <span>INFRASTRUCTURE STATE: <span class="text-accent green-text">100% ONLINE</span></span>
-      </div>
-      <div class="footer-socials">
-        <a href="https://github.com" target="_blank" class="social-link" aria-label="Github Profile"><i
-            data-lucide="github"></i></a>
-        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn Profile"><i
-            data-lucide="linkedin"></i></a>
-        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter Profile"><i
-            data-lucide="twitter"></i></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Project Details Modal (Hidden Overlay) -->
-  <div class="modal-overlay" id="project-modal" aria-hidden="true">
-    <div class="modal-container">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">
-        <i data-lucide="x"></i>
-      </button>
-
-      <div class="modal-header">
-        <div class="badge-glow" id="modal-project-category">DEVOPS</div>
-        <h2 class="modal-title" id="modal-project-title">Cloud-Native GitOps CI/CD Pipeline</h2>
-        <div class="modal-meta-row">
-          <span class="meta-item"><i data-lucide="calendar"></i> Duration: <strong id="modal-project-duration">4
-              Weeks</strong></span>
+    <!-- Global Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-brand font-mono">&copy; 2026 SYSTEM_DEVOPS. ALL PERMISSIONS GRANTED.</div>
+        <div class="footer-server-status font-mono">
+          <span class="status-indicator-dot blinking green-glow"></span>
+          <span>INFRASTRUCTURE STATE: <span class="text-accent green-text">100% ONLINE</span></span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" class="social-link" aria-label="Github Profile"
+            ><i data-lucide="github"></i
+          ></a>
+          <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn Profile"
+            ><i data-lucide="linkedin"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter Profile"
+            ><i data-lucide="twitter"></i
+          ></a>
         </div>
       </div>
+    </footer>
 
-      <div class="modal-content-grid">
-        <div class="modal-main-desc">
-          <h3>Architectural Overview</h3>
-          <p id="modal-project-long-desc">Detailed long description about the microservice or workflow goes here...</p>
+    <!-- Project Details Modal (Hidden Overlay) -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true">
+      <div class="modal-container">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Project Modal">
+          <i data-lucide="x"></i>
+        </button>
 
-          <h3 class="margin-top">Key Delivery Milestones</h3>
-          <ul class="highlights-list" id="modal-project-highlights">
-            <!-- Dynamically populated -->
-          </ul>
+        <div class="modal-header">
+          <div class="badge-glow" id="modal-project-category">DEVOPS</div>
+          <h2 class="modal-title" id="modal-project-title">Cloud-Native GitOps CI/CD Pipeline</h2>
+          <div class="modal-meta-row">
+            <span class="meta-item"
+              ><i data-lucide="calendar"></i> Duration: <strong id="modal-project-duration">4 Weeks</strong></span
+            >
+          </div>
         </div>
 
-        <div class="modal-sidebar">
-          <div class="sidebar-block">
-            <h3>Infrastructure & Stack</h3>
-            <div class="tech-tag-container" id="modal-project-tech-tags">
+        <div class="modal-content-grid">
+          <div class="modal-main-desc">
+            <h3>Architectural Overview</h3>
+            <p id="modal-project-long-desc">
+              Detailed long description about the microservice or workflow goes here...
+            </p>
+
+            <h3 class="margin-top">Key Delivery Milestones</h3>
+            <ul class="highlights-list" id="modal-project-highlights">
               <!-- Dynamically populated -->
-            </div>
+            </ul>
           </div>
 
-          <div class="sidebar-block">
-            <h3>Logical Pipeline Stream</h3>
-            <div class="architecture-flow font-mono" id="modal-project-architecture">
-              Developer Push -&gt; GitLab CI Builds -&gt; AWS EKS Sync
+          <div class="modal-sidebar">
+            <div class="sidebar-block">
+              <h3>Infrastructure & Stack</h3>
+              <div class="tech-tag-container" id="modal-project-tech-tags">
+                <!-- Dynamically populated -->
+              </div>
             </div>
-          </div>
 
-          <div class="modal-actions">
-            <a href="#" target="_blank" class="btn btn-primary btn-sm btn-block" id="modal-github-link">
-              <i data-lucide="github"></i> View Repository
-            </a>
-            <a href="#" target="_blank" class="btn btn-secondary btn-sm btn-block" id="modal-live-link">
-              <i data-lucide="external-link"></i> Live Operations
-            </a>
+            <div class="sidebar-block">
+              <h3>Logical Pipeline Stream</h3>
+              <div class="architecture-flow font-mono" id="modal-project-architecture">
+                Developer Push -&gt; GitLab CI Builds -&gt; AWS EKS Sync
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <a href="#" target="_blank" class="btn btn-primary btn-sm btn-block" id="modal-github-link">
+                <i data-lucide="github"></i> View Repository
+              </a>
+              <a href="#" target="_blank" class="btn btn-secondary btn-sm btn-block" id="modal-live-link">
+                <i data-lucide="external-link"></i> Live Operations
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Custom Script -->
-  <script src="script.js"></script>
-</body>
-
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+  </body>
 </html>

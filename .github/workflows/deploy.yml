@@ -1,28 +1,17 @@
 # ==========================================================================
-# GITHUB ACTIONS CI/CD PIPELINE CONFIGURATION
-# Purpose: Validate HTML assets and deploy static portfolio to GitHub Pages.
+# GITHUB ACTIONS CI/CD PIPELINE CONFIGURATION (AWS EC2 & DOCKER)
+# Purpose: Validate assets, containerize portfolio, and deploy to AWS EC2.
 # Trigger: Runs on every push to 'main' or 'master' branches.
 # ==========================================================================
 
-name: Deploy Portfolio Website
+name: Deploy Portfolio Website to AWS EC2
 
 on:
   push:
     branches:
       - main
       - master
-  workflow_dispatch: # Enables manual triggering of the pipeline from the GitHub Actions dashboard
-
-# Permissions required to publish web contents directly to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Prevent duplicate concurrent deployment runs to avoid race conditions
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  workflow_dispatch: # Enables manual triggering of the pipeline
 
 jobs:
   # ------------------------------------------------------------------------
@@ -39,32 +28,79 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Validate HTML Structure (HTMLHint)
-        run: npx htmlhint index.html
+      - name: Install Linting & Formatting Dependencies
+        run: npm ci
+
+      - name: Validate Code Assets (Lint & Format Check)
+        run: npm run lint
 
   # ------------------------------------------------------------------------
-  # JOB 2: Continuous Deployment (CD) - Deploy to GitHub Pages
+  # JOB 2: Continuous Deployment (CD) - Build Docker Image & Deploy to AWS EC2
   # ------------------------------------------------------------------------
   deploy:
-    name: Deploy to GitHub Pages
+    name: Build & Deploy to EC2
     needs: verify # Only execute deployment if linting and code verification succeeded
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} # Emits the final live website link in GitHub summary
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Setup GitHub Pages Config
-        uses: actions/configure-pages@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
-      - name: Compile & Upload Web Artifacts
-        uses: actions/upload-pages-artifact@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
         with:
-          path: '.' # Uploads entire workspace contents (index.html, styles.css, script.js, projects.json)
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Publish Live to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+            ${{ secrets.DOCKER_USERNAME }}/portfolio:${{ github.sha }}
+
+      - name: Execute Deploy Commands on AWS EC2 via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # 1. Update system packages
+            sudo apt-get update -y
+
+            # 2. Ensure Docker is installed on the EC2 instance
+            if ! command -v docker &> /dev/null; then
+              echo "Docker not found. Installing Docker..."
+              sudo apt-get install -y docker.io
+              sudo systemctl start docker
+              sudo systemctl enable docker
+              # Allow current user to run Docker commands without sudo
+              sudo usermod -aG docker $USER
+            fi
+
+            # 3. Pull the updated Docker image from Docker Hub
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+
+            # 4. Stop and remove any existing portfolio web container
+            echo "Removing existing container if running..."
+            sudo docker stop portfolio-web || true
+            sudo docker rm portfolio-web || true
+
+            # 5. Run the new container exposing port 80 mapping to container port 80
+            echo "Starting new portfolio container..."
+            sudo docker run -d --name portfolio-web -p 80:80 ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+
+            # 6. Verify container status
+            sudo docker ps | grep portfolio-web
+

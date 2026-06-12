@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-devops-cicd",
+  "version": "1.0.0",
+  "description": "DevOps CI/CD Pipeline for Personal Portfolio Website with Docker and AWS EC2",
+  "main": "script.js",
+  "scripts": {
+    "lint:html": "htmlhint index.html",
+    "lint:js": "eslint script.js",
+    "lint:css": "stylelint styles.css",
+    "format:check": "prettier --check index.html styles.css script.js projects.json",
+    "format:write": "prettier --write index.html styles.css script.js projects.json",
+    "lint": "npm run lint:html && npm run lint:js && npm run lint:css && npm run format:check"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
