@@ -13,84 +13,73 @@ document.addEventListener("DOMContentLoaded", () => {
   // Projects Database Fallback (if CORS restricts fetch during offline/file:// usage)
   const projectsFallback = [
     {
-      id: "gitops-pipeline",
-      title: "Cloud-Native GitOps CI/CD Pipeline",
-      category: "devops",
-      shortDescription: "Automated zero-downtime Canary deployments on Kubernetes using ArgoCD, Helm, and AWS EKS.",
-      longDescription:
-        "A robust, production-grade cloud-native GitOps deployment pipeline designed to automate application lifecycle management. It monitors application repositories, runs automated testing suites, builds containerized microservices, and synchronizes state seamlessly using declarative GitOps models.",
-      techStack: ["Kubernetes", "ArgoCD", "Helm", "AWS EKS", "Terraform", "GitLab CI", "Prometheus"],
-      architecture:
-        "Developer Push -> GitLab CI Builds & Tests -> Semantic Release -> Git Config Update -> ArgoCD Syncs State -> AWS EKS Cluster (Canary Rollouts with Argo Rollouts & Prometheus Metrics Hook)",
-      duration: "4 Weeks",
-      highlights: [
+      "id": "gitops-pipeline",
+      "title": "Cloud-Native GitOps CI/CD Pipeline",
+      "category": "devops",
+      "shortDescription": "Automated zero-downtime Canary deployments on Kubernetes using ArgoCD, Helm, and AWS EKS.",
+      "longDescription": "A robust, production-grade cloud-native GitOps deployment pipeline designed to automate application lifecycle management. It monitors application repositories, runs automated testing suites, builds containerized microservices, and synchronizes state seamlessly using declarative GitOps models.",
+      "techStack": ["Kubernetes", "ArgoCD", "Helm", "AWS EKS", "Terraform", "GitLab CI", "Prometheus"],
+      "architecture": "Developer Push -> GitLab CI Builds & Tests -> Semantic Release -> Git Config Update -> ArgoCD Syncs State -> AWS EKS Cluster (Canary Rollouts with Argo Rollouts & Prometheus Metrics Hook)",
+      "duration": "4 Weeks",
+      "highlights": [
         "Achieved 99.99% deployment uptime via automated Canary rollouts and dynamic rollbacks.",
         "Provisioned infrastructure-as-code (IaC) modular components securely with Terraform.",
-        "Optimized Docker build times by 40% using multi-stage builds and layer caching.",
+        "Optimized Docker build times by 40% using multi-stage builds and layer caching."
       ],
-      githubLink: "https://github.com/example/gitops-kubernetes-cicd",
-      liveLink: "https://github.com/example/gitops-kubernetes-cicd",
+      "githubLink": "https://github.com/example/gitops-kubernetes-cicd",
+      "liveLink": "https://github.com/example/gitops-kubernetes-cicd"
     },
     {
-      id: "chaos-platform",
-      title: "Automated Chaos Engineering Platform",
-      category: "tooling",
-      shortDescription:
-        "Python-based resiliency testing suite injecting network latency and system faults into Kubernetes clusters.",
-      longDescription:
-        "An automated system reliability tool built to inject failure patterns (pod terminations, high CPU/Memory load, network degradation) into staging Kubernetes namespaces. Provides interactive resiliency scoring dashboards to prevent cascading runtime failures.",
-      techStack: ["Python", "FastAPI", "Ansible", "Terraform", "Docker", "Grafana", "Chaos Mesh"],
-      architecture:
-        "FastAPI Web Controller -> Ansible Playbooks -> Chaos Mesh Custom Resources -> Staging Namespaces -> Real-time Telemetry Scrape -> Resilience Score Report Generator",
-      duration: "6 Weeks",
-      highlights: [
+      "id": "chaos-platform",
+      "title": "Automated Chaos Engineering Platform",
+      "category": "tooling",
+      "shortDescription": "Python-based resiliency testing suite injecting network latency and system faults into Kubernetes clusters.",
+      "longDescription": "An automated system reliability tool built to inject failure patterns (pod terminations, high CPU/Memory load, network degradation) into staging Kubernetes namespaces. Provides interactive resiliency scoring dashboards to prevent cascading runtime failures.",
+      "techStack": ["Python", "FastAPI", "Ansible", "Terraform", "Docker", "Grafana", "Chaos Mesh"],
+      "architecture": "FastAPI Web Controller -> Ansible Playbooks -> Chaos Mesh Custom Resources -> Staging Namespaces -> Real-time Telemetry Scrape -> Resilience Score Report Generator",
+      "duration": "6 Weeks",
+      "highlights": [
         "Identified and mitigated 5 major database connection pool vulnerabilities before production releases.",
         "Integrated dynamic Grafana panels showcasing system recovery times during active stress tests.",
-        "Designed full RESTful control API using FastAPI with JWT protection and role-based permissions.",
+        "Designed full RESTful control API using FastAPI with JWT protection and role-based permissions."
       ],
-      githubLink: "https://github.com/example/chaos-resilience-suite",
-      liveLink: "https://github.com/example/chaos-resilience-suite",
+      "githubLink": "https://github.com/example/chaos-resilience-suite",
+      "liveLink": "https://github.com/example/chaos-resilience-suite"
     },
     {
-      id: "microservices-gateway",
-      title: "Distributed Payment & Analytics Gateway",
-      category: "fullstack",
-      shortDescription:
-        "High-throughput microservices architecture with real-time telemetry, gRPC communication, and React frontend.",
-      longDescription:
-        "A highly performant distributed banking/payment gateway processing concurrent transactions securely. Connects a modern React dashboard to an ultra-fast Go/gRPC backend stack, supported by Redis cache pools and asynchronous task queues.",
-      techStack: ["Go", "React", "gRPC", "Redis", "PostgreSQL", "Docker", "Nginx", "RabbitMQ"],
-      architecture:
-        "React Client -> Nginx Gateway -> Go Web API -> gRPC Internal Microservices -> RabbitMQ Event Bus -> PostgreSQL Transaction Ledger (with Redis read caches)",
-      duration: "8 Weeks",
-      highlights: [
+      "id": "microservices-gateway",
+      "title": "Distributed Payment & Analytics Gateway",
+      "category": "fullstack",
+      "shortDescription": "High-throughput microservices architecture with real-time telemetry, gRPC communication, and React frontend.",
+      "longDescription": "A highly performant distributed banking/payment gateway processing concurrent transactions securely. Connects a modern React dashboard to an ultra-fast Go/gRPC backend stack, supported by Redis cache pools and asynchronous task queues.",
+      "techStack": ["Go", "React", "gRPC", "Redis", "PostgreSQL", "Docker", "Nginx", "RabbitMQ"],
+      "architecture": "React Client -> Nginx Gateway -> Go Web API -> gRPC Internal Microservices -> RabbitMQ Event Bus -> PostgreSQL Transaction Ledger (with Redis read caches)",
+      "duration": "8 Weeks",
+      "highlights": [
         "Slashed query latency by 65% by implementing smart Redis cache-aside strategies.",
         "Handled 15,000+ concurrent requests per second with highly lightweight Go routines and gRPC channels.",
-        "Designed responsive visual charting using React & Chart.js showcasing transaction metrics.",
+        "Designed responsive visual charting using React & Chart.js showcasing transaction metrics."
       ],
-      githubLink: "https://github.com/example/distributed-grpc-gateway",
-      liveLink: "https://github.com/example/distributed-grpc-gateway",
+      "githubLink": "https://github.com/example/distributed-grpc-gateway",
+      "liveLink": "https://github.com/example/distributed-grpc-gateway"
     },
     {
-      id: "serverless-telemetry",
-      title: "Serverless Multi-Cluster Telemetry Agent",
-      category: "cloud",
-      shortDescription:
-        "Lightweight serverless IoT and Edge telemetry aggregator with AWS Lambda, DynamoDB, and live dashboard.",
-      longDescription:
-        "A hyper-scalable, cost-efficient serverless backend and visual dashboard tracking resource telemetry from remote servers. Deployed fully serverless, processing thousands of device telemetry logs per minute with zero server maintenance.",
-      techStack: ["Node.js", "AWS Lambda", "DynamoDB", "API Gateway", "AWS S3", "ChartJS", "Serverless Framework"],
-      architecture:
-        "Remote Telemetry Agents -> AWS API Gateway -> AWS Lambda Workers -> DynamoDB Timeseries Storage -> React SPA (loaded from CloudFront CDN & S3)",
-      duration: "3 Weeks",
-      highlights: [
+      "id": "serverless-telemetry",
+      "title": "Serverless Multi-Cluster Telemetry Agent",
+      "category": "cloud",
+      "shortDescription": "Lightweight serverless IoT and Edge telemetry aggregator with AWS Lambda, DynamoDB, and live dashboard.",
+      "longDescription": "A hyper-scalable, cost-efficient serverless backend and visual dashboard tracking resource telemetry from remote servers. Deployed fully serverless, processing thousands of device telemetry logs per minute with zero server maintenance.",
+      "techStack": ["Node.js", "AWS Lambda", "DynamoDB", "API Gateway", "AWS S3", "ChartJS", "Serverless Framework"],
+      "architecture": "Remote Telemetry Agents -> AWS API Gateway -> AWS Lambda Workers -> DynamoDB Timeseries Storage -> React SPA (loaded from CloudFront CDN & S3)",
+      "duration": "3 Weeks",
+      "highlights": [
         "Operated at $0 base hosting cost due to AWS Serverless Free Tier optimization.",
         "Established efficient DynamoDB partition key structures to enable fast real-time timeseries lookups.",
-        "Built clean CSS-based dashboards with smooth transitions, custom alert filters, and SMS alerts.",
+        "Built clean CSS-based dashboards with smooth transitions, custom alert filters, and SMS alerts."
       ],
-      githubLink: "https://github.com/example/serverless-telemetry-system",
-      liveLink: "https://github.com/example/serverless-telemetry-system",
-    },
+      "githubLink": "https://github.com/example/serverless-telemetry-system",
+      "liveLink": "https://github.com/example/serverless-telemetry-system"
+    }
   ];
 
   let projectsData = [...projectsFallback];
@@ -104,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "highly automated deployments.",
       "zero-downtime scaling setups.",
       "interactive developer utilities.",
-      "premium full-stack services.",
+      "premium full-stack services."
     ];
     let phraseIndex = 0;
     let charIndex = 0;
@@ -280,13 +269,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!projectsGrid) return;
     projectsGrid.innerHTML = "";
 
-    const filtered = filterValue === "all" ? projectsData : projectsData.filter((p) => p.category === filterValue);
+    const filtered = filterValue === "all" 
+      ? projectsData 
+      : projectsData.filter(p => p.category === filterValue);
 
     filtered.forEach((project, idx) => {
       const card = document.createElement("div");
       card.className = "project-card";
       card.setAttribute("data-id", project.id);
-
+      
       // Select visual icon based on tech or category
       let iconName = "cpu";
       if (project.category === "devops") iconName = "git-branch";
@@ -304,10 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3 class="project-card-title">${project.title}</h3>
           <p class="project-card-desc">${project.shortDescription}</p>
           <div class="project-card-tech">
-            ${project.techStack
-              .slice(0, 3)
-              .map((tech) => `<span class="tech-badge">${tech}</span>`)
-              .join("")}
+            ${project.techStack.slice(0, 3).map(tech => `<span class="tech-badge">${tech}</span>`).join("")}
             ${project.techStack.length > 3 ? `<span class="tech-badge">+${project.techStack.length - 3} more</span>` : ""}
           </div>
         </div>
@@ -343,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Filter click handlers
   filterTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      filterTabs.forEach((t) => t.classList.remove("active"));
+      filterTabs.forEach(t => t.classList.remove("active"));
       tab.classList.add("active");
       const targetFilter = tab.getAttribute("data-filter");
       renderProjects(targetFilter);
@@ -358,9 +346,9 @@ document.addEventListener("DOMContentLoaded", () => {
      ========================================== */
   const modalOverlay = document.getElementById("project-modal");
   const modalCloseBtn = document.getElementById("modal-close-btn");
-
+  
   function openProjectModal(projectId) {
-    const project = projectsData.find((p) => p.id === projectId);
+    const project = projectsData.find(p => p.id === projectId);
     if (!project || !modalOverlay) return;
 
     // Populate modal content fields
@@ -369,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("modal-project-duration").textContent = project.duration;
     document.getElementById("modal-project-long-desc").textContent = project.longDescription;
     document.getElementById("modal-project-architecture").textContent = project.architecture;
-
+    
     // Links
     const modalGit = document.getElementById("modal-github-link");
     const modalLive = document.getElementById("modal-live-link");
@@ -378,11 +366,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Populate Tech stack badges
     const techContainer = document.getElementById("modal-project-tech-tags");
-    techContainer.innerHTML = project.techStack.map((t) => `<span class="tech-badge">${t}</span>`).join("");
+    techContainer.innerHTML = project.techStack.map(t => `<span class="tech-badge">${t}</span>`).join("");
 
     // Populate Highlights lists
     const highlightsContainer = document.getElementById("modal-project-highlights");
-    highlightsContainer.innerHTML = project.highlights.map((h) => `<li>${h}</li>`).join("");
+    highlightsContainer.innerHTML = project.highlights.map(h => `<li>${h}</li>`).join("");
 
     // Open transitions
     modalOverlay.classList.add("open");
@@ -427,10 +415,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const terminalInput = document.getElementById("terminal-input");
   const terminalOutput = document.getElementById("terminal-output");
   const sessionTimeNode = document.getElementById("current-session-time");
-
+  
   if (sessionTimeNode) {
     const d = new Date();
-    sessionTimeNode.textContent = d.toISOString().slice(0, 19).replace("T", " ");
+    sessionTimeNode.textContent = d.toISOString().slice(0, 19).replace('T', ' ');
   }
 
   // Command History Buffer
@@ -492,21 +480,10 @@ document.addEventListener("DOMContentLoaded", () => {
           printLine("  <span class='term-highlight'>about</span>         - Details regarding systems career & focus");
           printLine("  <span class='term-highlight'>skills</span>        - Technical capabilities matrix");
           printLine("  <span class='term-highlight'>projects</span>      - List of loaded operations architectures");
-          printLine(
-            "  <span class='term-highlight'>inspect [id]</span>  - Open dynamic modal specifications for a project"
-          );
-          printLine(
-            "  <span class='term-highlight'>neofetch</span>      - Run custom hardware/software system telemetry reporting"
-          );
-          printLine(
-            "  <span class='term-highlight'>theme [name]</span>  - Instantly load layout theme (<span class='code-inline'>cyberpunk</span> | <span class='code-inline'>nebula</span> | <span class='code-inline'>glass-light</span>)"
-          );
-          printLine(
-            "  <span class='term-highlight'>pipeline</span>      - Show and simulate the active AWS EC2 Docker CI/CD pipeline"
-          );
-          printLine(
-            "  <span class='term-highlight'>contact</span>       - Secure mailbox and operational coordinate details"
-          );
+          printLine("  <span class='term-highlight'>inspect [id]</span>  - Open dynamic modal specifications for a project");
+          printLine("  <span class='term-highlight'>neofetch</span>      - Run custom hardware/software system telemetry reporting");
+          printLine("  <span class='term-highlight'>theme [name]</span>  - Instantly load layout theme (<span class='code-inline'>cyberpunk</span> | <span class='code-inline'>nebula</span> | <span class='code-inline'>glass-light</span>)");
+          printLine("  <span class='term-highlight'>contact</span>       - Secure mailbox and operational coordinate details");
           printLine("  <span class='term-highlight'>clear</span>         - Flush active screen scroll buffer");
           break;
 
@@ -516,54 +493,37 @@ document.addEventListener("DOMContentLoaded", () => {
             // alias
           }
           printLine("PROFILE META: Full-Stack Systems Engineer", "text-accent");
-          printLine(
-            "Over 5 years of professional focus orchestrating containerized clusters, defining resilient CI/CD structures, and coding beautiful, state-of-the-art interactive frontends.",
-            "term-result"
-          );
-          printLine(
-            "Focused on bridging operational gaps, standardizing deployment strategies (GitOps), and developing highly scalable microservice solutions.",
-            "term-result"
-          );
+          printLine("Over 5 years of professional focus orchestrating containerized clusters, defining resilient CI/CD structures, and coding beautiful, state-of-the-art interactive frontends.", "term-result");
+          printLine("Focused on bridging operational gaps, standardizing deployment strategies (GitOps), and developing highly scalable microservice solutions.", "term-result");
           break;
 
         case "skills":
           printLine("Ecosystem Competencies Database:", "text-accent");
           printLine("  <strong>Cloud & IaC:</strong> AWS (95%), Terraform (90%), GCP (80%)", "term-result");
           printLine("  <strong>Orchestration:</strong> Kubernetes (92%), Docker (95%), ArgoCD (88%)", "term-result");
-          printLine(
-            "  <strong>Core Backend:</strong> Go/Golang (85%), Python/FastAPI (90%), Shell Scripting (95%)",
-            "term-result"
-          );
-          printLine(
-            "  <strong>Frontend:</strong> React & NextJS (85%), Vanilla ES6 JS/HTML5/CSS3 (90%)",
-            "term-result"
-          );
+          printLine("  <strong>Core Backend:</strong> Go/Golang (85%), Python/FastAPI (90%), Shell Scripting (95%)", "term-result");
+          printLine("  <strong>Frontend:</strong> React & NextJS (85%), Vanilla ES6 JS/HTML5/CSS3 (90%)", "term-result");
           printLine("  <strong>Observability:</strong> Prometheus, Grafana, ELK Logging stack (88%)", "term-result");
           break;
 
         case "projects":
           printLine("Active Project Registry:", "text-accent");
-          projectsData.forEach((p) => {
+          projectsData.forEach(p => {
             printLine(`  • ID: <span class='term-highlight'>${p.id}</span> - ${p.title}`, "term-result");
           });
-          printLine(
-            "  <i>Type '<span class='code-inline'>inspect [id]</span>' to launch modal specifications. Example: <span class='code-inline'>inspect chaos-platform</span></i>"
-          );
+          printLine("  <i>Type '<span class='code-inline'>inspect [id]</span>' to launch modal specifications. Example: <span class='code-inline'>inspect chaos-platform</span></i>");
           break;
 
         case "inspect":
           if (!arg) {
             printLine("Error: Please specify a project ID. E.g. 'inspect gitops-pipeline'", "term-error");
           } else {
-            const proj = projectsData.find((p) => p.id === arg);
+            const proj = projectsData.find(p => p.id === arg);
             if (proj) {
               printLine(`Launching Modal Dashboard for: <span class='term-highlight'>${proj.title}</span>...`);
               openProjectModal(proj.id);
             } else {
-              printLine(
-                `Error: Project ID '${arg}' not found in registry. Type 'projects' to review logs.`,
-                "term-error"
-              );
+              printLine(`Error: Project ID '${arg}' not found in registry. Type 'projects' to review logs.`, "term-error");
             }
           }
           break;
@@ -575,9 +535,9 @@ document.addEventListener("DOMContentLoaded", () => {
    /\\_/\\      guest@devops-ops-shell
   ( o.o )     ----------------------
    > ^ <      OS: Custom Linux Shell Sandbox v2.4.1
-  (  | |  )   Host: Portfolio SPA System Node
- (___|___)    Kernel: Chrome/Webkit Javascript Core
-              Uptime: 100% (High Availability)
+  /     \\     Host: Portfolio SPA System Node
+ (  | |  )    Kernel: Chrome/Webkit Javascript Core
+(___|___)     Uptime: 100% (High Availability)
               Active Theme: ${currentTheme}
               Shell Interface: /bin/bash (Sandbox Sandbox)
               Shell Mode: Fully Interactive (Level 1)
@@ -596,65 +556,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           break;
 
-        case "pipeline":
-        case "cicd":
-        case "ci-cd":
-          printLine("INITIATING CI/CD PIPELINE TELEMETRY... [AWS EC2 TARGET]", "text-accent");
-          printLine("Connecting to active GitHub Actions runner context...", "term-result");
-
-          const pipelineSteps = [
-            { desc: "Checkout Source Code & Load Environment Secrets", status: "SUCCESS" },
-            { desc: "Setup Node.js Environment (v20)", status: "SUCCESS" },
-            { desc: "Install validation dependencies (npm ci)", status: "SUCCESS" },
-            { desc: "Run HTMLHint semantic structure validation (npm run lint:html)", status: "SUCCESS" },
-            { desc: "Run ESLint JavaScript code quality checks (npm run lint:js)", status: "SUCCESS" },
-            { desc: "Run Stylelint CSS architecture checks (npm run lint:css)", status: "SUCCESS" },
-            { desc: "Run Prettier source formatting compliance checks (npm run format:check)", status: "SUCCESS" },
-            { desc: "Setup QEMU & Docker Buildx runner engines", status: "SUCCESS" },
-            { desc: "Build Docker image (nginx:alpine baseline)", status: "SUCCESS" },
-            { desc: "Push Docker image to registry (danishdarga/portfolio:latest)", status: "SUCCESS" },
-            { desc: "Establish secure SSH tunnel handshake to AWS EC2 VM host", status: "SUCCESS" },
-            { desc: "Pull updated container image on target AWS VM host", status: "SUCCESS" },
-            { desc: "Gracefully stop and clear previous portfolio web container", status: "SUCCESS" },
-            { desc: "Deploy new container and map port 80 traffic", status: "ACTIVE" },
-          ];
-
-          let stepIdx = 0;
-          function runSimulation() {
-            if (stepIdx < pipelineSteps.length) {
-              const s = pipelineSteps[stepIdx];
-              const isLast = stepIdx === pipelineSteps.length - 1;
-              const colorClass = isLast ? "text-accent" : "term-result";
-              const statusText = isLast ? "[★ RUNNING]" : "[✔ SUCCESS]";
-              printLine(`  ${statusText.padEnd(12)} - ${s.desc}`, colorClass);
-              stepIdx++;
-              setTimeout(runSimulation, 250);
-            } else {
-              printLine("<br>===============================================================");
-              printLine(
-                "STATUS: <span class='term-highlight'>DEPLOYMENT LIVE</span> ON AWS EC2 TARGET HOST",
-                "text-accent"
-              );
-              printLine(
-                "Network Endpoint: <a href='http://localhost' target='_blank' class='term-highlight'>http://&lt;EC2_PUBLIC_IP&gt;</a>",
-                "term-result"
-              );
-              printLine("Image Registry: danishdarga/portfolio:latest", "term-result");
-              printLine("Infrastructure State: 100% HEALTHY", "term-result");
-              printLine("===============================================================");
-            }
-          }
-          setTimeout(runSimulation, 200);
-          break;
-
         case "contact":
           printLine("Secure Handshake Protocols:", "text-accent");
           printLine("  <strong>SMTP Connection:</strong> admin@sysdevops.io", "term-result");
           printLine("  <strong>Signal Coordinate:</strong> San Francisco, CA (Remote Friendly)", "term-result");
-          printLine(
-            "  <strong>RSA SSH Public Handshake:</strong> ssh-rsa AAAAB3NzaC1yc... (Copy from contact section)",
-            "term-result"
-          );
+          printLine("  <strong>RSA SSH Public Handshake:</strong> ssh-rsa AAAAB3NzaC1yc... (Copy from contact section)", "term-result");
           break;
 
         case "clear":
@@ -662,10 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
 
         default:
-          printLine(
-            `bash: command not found: '${cmd}'. Type '<span class='term-highlight'>help</span>' for lists of system operations.`,
-            "term-error"
-          );
+          printLine(`bash: command not found: '${cmd}'. Type '<span class='term-highlight'>help</span>' for lists of system operations.`, "term-error");
       }
     }
   }
@@ -681,19 +584,19 @@ document.addEventListener("DOMContentLoaded", () => {
     name: document.getElementById("contact-name"),
     email: document.getElementById("contact-email"),
     subject: document.getElementById("contact-subject"),
-    message: document.getElementById("contact-message"),
+    message: document.getElementById("contact-message")
   };
 
   const errors = {
     name: document.getElementById("error-name"),
     email: document.getElementById("error-email"),
     subject: document.getElementById("error-subject"),
-    message: document.getElementById("error-message"),
+    message: document.getElementById("error-message")
   };
 
   // Blur validation trigger
   if (contactForm) {
-    Object.keys(inputs).forEach((key) => {
+    Object.keys(inputs).forEach(key => {
       const input = inputs[key];
       if (input) {
         input.addEventListener("blur", () => {
@@ -711,7 +614,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       let isAllValid = true;
-      Object.keys(inputs).forEach((key) => {
+      Object.keys(inputs).forEach(key => {
         const isValid = validateField(key);
         if (!isValid) isAllValid = false;
       });
@@ -721,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const submitBtn = document.getElementById("form-submit-btn");
         const submitBtnSpan = submitBtn.querySelector("span");
         const submitBtnIcon = submitBtn.querySelector("i");
-
+        
         submitBtn.disabled = true;
         submitBtnSpan.textContent = "TRANSMITTING PACKAGE...";
         submitBtnIcon.setAttribute("data-lucide", "refresh-cw");
@@ -748,9 +651,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (feedbackResetBtn) {
       feedbackResetBtn.addEventListener("click", () => {
         contactForm.reset();
-
+        
         // Remove focus styling classes
-        Object.keys(inputs).forEach((key) => {
+        Object.keys(inputs).forEach(key => {
           const wrapper = inputs[key]?.parentElement;
           if (wrapper) wrapper.classList.remove("error");
         });

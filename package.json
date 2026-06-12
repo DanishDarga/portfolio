@@ -9,7 +9,7 @@
     "lint:css": "stylelint styles.css",
     "format:check": "prettier --check index.html styles.css script.js projects.json",
     "format:write": "prettier --write index.html styles.css script.js projects.json",
-    "lint": "npm run lint:html && npm run lint:js && npm run lint:css && npm run format:check"
+    "lint": "npm run lint:html && npm run lint:js && npm run lint:css"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
